@@ -1,4 +1,8 @@
 
 #time {
-    font-size: 12em;
+    font-size: 15em;
+}
+
+.temperature {
+    font-size: 3em;
 }

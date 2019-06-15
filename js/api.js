@@ -1,5 +1,12 @@
-// This API Key is free and has a limit, so it is secure to make it public!
+// This API Key is free and has a daily limit, so it is secure to make it public!!
 var config = {
-  apiKey : '23de50799409973690cd8f7ac2274050',
-  locationCoords: '41.919032,-87.706850'
+    corsProxy: 'https://cors-anywhere.herokuapp.com/',
+    darkSkyURL: 'https://api.darksky.net/forecast/',
+    apiKey : '23de50799409973690cd8f7ac2274050',
+    locationCoords: '41.919032,-87.706850'
 }
+var url = config.corsProxy
++ config.darkSkyURL
++ config.apiKey
++ '/'
++ config.locationCoords;

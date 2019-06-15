@@ -1,3 +1,9 @@
+window.onload = function() {
+    startTime();
+    weatherData();
+};
+
+var currentTemperature = null;
 
 
 function checkTime(i) {
@@ -18,13 +24,26 @@ function startTime() {
         startTime()
     }, 1000);
 }
-startTime()
 
-const userAction = async () => {
-    var url = 'https://api.darksky.net/forecast/' + config.apiKey + config.locationCoords;
-    const response = await fetch(url);
-    const myJson = await response.json(); //extract JSON from the http response
+const retrieveData = async () => {
+    // const response = await fetch(url);
+    // const weatherData = await response.json(); //extract JSON from the http response
     // do something with myJson
-    console.log(myJson);
+    // console.log(weatherData.currently);
+    // currentTemperature = weatherData.currently.temperature;
+    currentTemperature = 66;
+    document.getElementById('temperature-fahrenheit').innerHTML = currentTemperature + 'ºF';
+    document.getElementById('temperature-celsius').innerHTML = toCelsius(currentTemperature) + 'ºC';
 }
-userAction()
+
+function weatherData() {
+    retrieveData()
+    t = setTimeout(function() {
+        weatherData()
+    }, 600000);
+}
+
+function toCelsius(f) {
+    var c = (f - 32) * 5/9;
+    return c.toFixed(0);
+}
