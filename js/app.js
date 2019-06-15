@@ -1,4 +1,4 @@
-// Request('https://darksky.net/widget/graph-bar/41.919,-87.7067/uk212/en.js?width=100%&height=400&title=Full Forecast&textColor=ffffff&bgColor=fb0505&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=uk2&timeColor=ffffff&tempColor=000000&currentDetailsOption=true')
+
 
 function checkTime(i) {
     if (i < 10) {
@@ -16,6 +16,15 @@ function startTime() {
     document.getElementById('time').innerHTML = h + ":" + m;
     t = setTimeout(function() {
         startTime()
-    }, 500);
+    }, 1000);
 }
 startTime()
+
+const userAction = async () => {
+    var url = 'https://api.darksky.net/forecast/' + config.apiKey + config.locationCoords;
+    const response = await fetch(url);
+    const myJson = await response.json(); //extract JSON from the http response
+    // do something with myJson
+    console.log(myJson);
+}
+userAction()
