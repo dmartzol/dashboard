@@ -1,4 +1,5 @@
-// This API Key is free and has a daily limit, so it is secure to make it public!!
+// This API Key has been renewed and the file has been added to .gitignore
+// It was free and had a daily limit, so it was secure to make it public anyway
 var config = {
     corsProxy: 'https://cors-anywhere.herokuapp.com/',
     darkSkyURL: 'https://api.darksky.net/forecast/',
