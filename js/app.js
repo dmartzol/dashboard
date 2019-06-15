@@ -26,13 +26,11 @@ function startTime() {
 }
 
 const retrieveData = async () => {
-    // const response = await fetch(url);
-    // const weatherData = await response.json(); //extract JSON from the http response
-    // do something with myJson
+    const response = await fetch(url);
+    const weatherData = await response.json(); //extract JSON from the http response
     // console.log(weatherData.currently);
-    // currentTemperature = weatherData.currently.temperature;
-    currentTemperature = 66;
-    document.getElementById('temperature-fahrenheit').innerHTML = currentTemperature + 'ºF';
+    currentTemperature = weatherData.currently.temperature;
+    document.getElementById('temperature-fahrenheit').innerHTML = currentTemperature.toFixed(0) + 'ºF';
     document.getElementById('temperature-celsius').innerHTML = toCelsius(currentTemperature) + 'ºC';
 }
 
