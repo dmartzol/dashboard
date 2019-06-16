@@ -30,8 +30,8 @@ const retrieveData = async () => {
     const weatherData = await response.json(); //extract JSON from the http response
     // console.log(weatherData.currently);
     currentTemperature = weatherData.currently.temperature;
-    document.getElementById('temperature-fahrenheit').innerHTML = currentTemperature.toFixed(0) + 'ºF';
-    document.getElementById('temperature-celsius').innerHTML = toCelsius(currentTemperature) + 'ºC';
+    document.getElementById('temperature-fahrenheit').innerHTML = currentTemperature.toFixed(0) + 'F';
+    document.getElementById('temperature-celsius').innerHTML = toCelsius(currentTemperature) + 'C';
 }
 
 function weatherData() {
