@@ -1,23 +1,20 @@
-window.onload = function() {
-    startTime();
+window.onload = function () {
+    setInterval(changeTime, 1000);
 };
 
 
-function checkTime(i) {
+// formatMinutes adds a zero in front of numbers lower than 10
+function formatMinutes(i) {
     if (i < 10) {
         i = "0" + i;
     }
     return i;
 }
 
-function startTime() {
+function changeTime() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
-    // add a zero in front of numbers<10
-    m = checkTime(m);
+    m = formatMinutes(m);
     document.getElementById('time').innerHTML = h + ":" + m;
-    t = setTimeout(function() {
-        startTime()
-    }, 1000);
 }
