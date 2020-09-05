@@ -1,9 +1,6 @@
 window.onload = function() {
     startTime();
-    weatherData();
 };
-
-var currentTemperature = null;
 
 
 function checkTime(i) {
@@ -23,25 +20,4 @@ function startTime() {
     t = setTimeout(function() {
         startTime()
     }, 1000);
-}
-
-const retrieveData = async () => {
-    const response = await fetch(url);
-    const weatherData = await response.json(); //extract JSON from the http response
-    // console.log(weatherData.currently);
-    currentTemperature = weatherData.currently.temperature;
-    document.getElementById('temperature-fahrenheit').innerHTML = currentTemperature.toFixed(0) + 'F';
-    document.getElementById('temperature-celsius').innerHTML = toCelsius(currentTemperature) + 'C';
-}
-
-function weatherData() {
-    retrieveData()
-    t = setTimeout(function() {
-        weatherData()
-    }, 600000);
-}
-
-function toCelsius(f) {
-    var c = (f - 32) * 5/9;
-    return c.toFixed(0);
 }
