@@ -15,7 +15,6 @@ function formatMinutes(i) {
 function changeTime() {
     var today = new Date();
     var h = today.getHours();
-    var m = today.getMinutes();
-    m = formatMinutes(m);
+    var m = formatMinutes(today.getMinutes());
     document.getElementById('time').innerHTML = h + ":" + m;
 }
