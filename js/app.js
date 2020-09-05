@@ -1,4 +1,5 @@
 window.onload = function () {
+    changeTime();
     setInterval(changeTime, 1000);
 };
 
